@@ -1,0 +1,84 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GBFS feed",
+        "description": "Enter the provider gbfs.json URL. Vehicles inside the search radius are tracked around this location.",
+        "data": {
+          "name": "Name",
+          "gbfs_url": "GBFS discovery URL",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "radius_meters": "Search radius",
+          "max_vehicles": "Maximum vehicles",
+          "min_battery_percent": "Minimum battery"
+        },
+        "data_description": {
+          "name": "Name shown for this feed in Home Assistant.",
+          "gbfs_url": "https URL of the provider's gbfs.json file.",
+          "latitude": "Latitude of the search center.",
+          "longitude": "Longitude of the search center.",
+          "radius_meters": "Only vehicles within this distance are counted.",
+          "max_vehicles": "How many of the closest vehicles to show on the map.",
+          "min_battery_percent": "Ignore free vehicles below this charge. 0 keeps every vehicle, including those with no battery reading."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the GBFS feed.",
+      "invalid_gbfs": "The URL did not return a valid GBFS discovery file.",
+      "missing_url": "Enter a gbfs.json URL.",
+      "no_vehicle_feed": "The discovery file has no vehicle or station feeds.",
+      "invalid_name": "Name is required.",
+      "already_configured": "This GBFS feed is already configured."
+    },
+    "abort": {
+      "already_configured": "This GBFS feed is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GBFS options",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "radius_meters": "Search radius",
+          "max_vehicles": "Maximum vehicles",
+          "min_battery_percent": "Minimum battery"
+        },
+        "data_description": {
+          "latitude": "Latitude of the search center.",
+          "longitude": "Longitude of the search center.",
+          "radius_meters": "Only vehicles within this distance are counted.",
+          "max_vehicles": "How many of the closest vehicles to show on the map.",
+          "min_battery_percent": "Ignore free vehicles below this charge. 0 keeps every vehicle, including those with no battery reading."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "available_nearby": {
+        "name": "Available nearby"
+      },
+      "docked_nearby": {
+        "name": "Docked nearby"
+      },
+      "nearest_distance": {
+        "name": "Nearest distance"
+      },
+      "nearest_battery": {
+        "name": "Nearest battery"
+      },
+      "nearest_station": {
+        "name": "Nearest station"
+      }
+    },
+    "binary_sensor": {
+      "usable_nearby": {
+        "name": "Usable nearby"
+      }
+    }
+  }
+}
